@@ -2,6 +2,11 @@
 
 `bg.nvim` automatically syncs terminal background with neovim colorscheme.
 
+| - |bg.nvim |
+|---|---|
+|![without](https://user-images.githubusercontent.com/5502029/211703249-91bb0e37-5af0-4a73-9f33-9e1d55995d3c.png)|![with](https://user-images.githubusercontent.com/5502029/211703252-e19c6a42-e478-469a-9c08-b5730eba6921.png)|
+
+
 ## Install
 
 ```lua
