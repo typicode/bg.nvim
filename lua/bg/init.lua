@@ -12,7 +12,7 @@ end
 
 M.setup = function(opts)
 	vim.api.nvim_create_autocmd({ "ColorScheme" }, { callback = M.update })
-	vim.api.nvim_create_autocmd({ "ExitPre" }, {
+	vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
 		callback = function()
 			set(opts["term"])
 		end,
