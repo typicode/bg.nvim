@@ -1,7 +1,7 @@
 local M = {}
 
 local set = function(color)
-	os.execute('printf "\\033]11;' .. color .. '\\007" > $(tty)')
+	os.execute('printf "\\033]11;' .. color .. '\\007" > $(tty) 2> /dev/null')
 end
 
 M.update = function()
