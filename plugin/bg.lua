@@ -9,7 +9,7 @@ end
 local update = function()
 	local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]
 	local hex = string.format("#%06x", bg)
-	os.execute('printf "\\033]11;' .. hex .. '" > ' .. tty)
+	os.execute('printf "\\033]11;' .. hex .. '\\007" > ' .. tty)
 end
 
 local setup = function()
