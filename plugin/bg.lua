@@ -8,6 +8,9 @@ end
 
 local update = function()
 	local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]
+	if bg == nil then
+		return reset()
+	end
 	local hex = string.format("#%06x", bg)
 	os.execute('printf "\\033]11;' .. hex .. '\\007" > ' .. tty)
 end
