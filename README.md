@@ -26,3 +26,5 @@ use({ "typicode/bg.nvim" })
 `bg.nvim` uses escape sequences to change your terminal background whenever you change your colorscheme. When neovim exits, it will restore the original terminal background.
 
 Supported by modern terminals (alacritty, foot, gnome-terminal, kitty, wezterm, ...).
+
+For reset colors support, [st](https://st.suckless.org/) needs to be [patched](https://pastebin.com/raw/3AthiL72).
