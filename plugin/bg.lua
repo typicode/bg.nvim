@@ -3,16 +3,22 @@ local tty = handle:read("*a")
 handle:close()
 
 local reset = function()
-	os.execute('printf "\\033]111" >' .. tty)
+	os.execute('printf "\\033]111\\007" > ' .. tty)
 end
 
 local update = function()
-	local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]
+	local normal = vim.api.nvim_get_hl_by_name("Normal", true)
+	local bg = normal["background"]
+	local fg = normal["foreground"]
 	if bg == nil then
 		return reset()
 	end
-	local hex = string.format("#%06x", bg)
-	os.execute('printf "\\033]11;' .. hex .. '\\007" > ' .. tty)
+
+	local bghex = string.format("#%06x", bg)
+	os.execute('printf "\\033]11;' .. bghex .. '\\007" > ' .. tty)
+
+	local fghex = string.format("#%06x", fg)
+	os.execute('printf "\\033]12;' .. fghex .. '\\007" > ' .. tty)
 end
 
 local setup = function()

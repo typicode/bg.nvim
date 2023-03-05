@@ -1,6 +1,6 @@
 # bg.nvim 🎆
 
-> `bg.nvim` automatically syncs terminal background with any neovim colorscheme.
+> `bg.nvim` automatically syncs terminal background and cursor with any neovim colorscheme.
 
 ## Example
 
@@ -22,6 +22,6 @@ use({ "typicode/bg.nvim" })
 
 ## How it works
 
-`bg.nvim` uses escape sequences to change your terminal background whenever you change your colorscheme. When neovim exits, it will restore the original terminal background.
+`bg.nvim` uses escape sequences to change your terminal background and cursor whenever you change your colorscheme. When neovim exits, it will restore the original colors.
 
 Supported by modern terminals (alacritty, foot, gnome-terminal, kitty, wezterm, ...).
