@@ -18,7 +18,7 @@ _Changing colorscheme with and without `bg.nvim`_
 -- Packer
 use({ "typicode/bg.nvim" })
 -- Lazy
-"typicode/bg.nvim"
+{ "typicode/bg.nvim", lazy = false }
 ```
 
 ## How it works
