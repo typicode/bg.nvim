@@ -15,10 +15,15 @@ local update = function()
 	end
 
 	local bghex = string.format("#%06x", bg)
-	os.execute('printf "\\033]11;' .. bghex .. '\\007" > ' .. tty)
-
 	local fghex = string.format("#%06x", fg)
-	os.execute('printf "\\033]12;' .. fghex .. '\\007" > ' .. tty)
+
+	if os.getenv("TMUX") then
+		os.execute('printf "\\ePtmux;\\e\\033]11;' .. bghex .. '\\007\\e\\\\"')
+		os.execute('printf "\\ePtmux;\\e\\033]12;' .. fghex .. '\\007\\e\\\\"')
+	else
+		os.execute('printf "\\033]11;' .. bghex .. '\\007" > ' .. tty)
+		os.execute('printf "\\033]12;' .. fghex .. '\\007" > ' .. tty)
+	end
 end
 
 local setup = function()
