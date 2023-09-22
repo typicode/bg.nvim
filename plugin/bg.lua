@@ -2,7 +2,7 @@ local handle = io.popen("tty")
 local tty = handle:read("*a")
 handle:close()
 
-if tty == "" or tty:match("not a tty") then
+if tty:find("not a tty") then
 	return
 end
 
