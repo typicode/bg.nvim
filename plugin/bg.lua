@@ -7,7 +7,11 @@ if tty:find("not a tty") then
 end
 
 local reset = function()
-	os.execute('printf "\\033]111\\007" > ' .. tty)
+	if os.getenv("TMUX") then
+		os.execute('printf "\\ePtmux;\\e\\033]111\\007\\e\\\\"')
+	else
+		os.execute('printf "\\033]111\\007" > ' .. tty)
+	end
 end
 
 local update = function()
