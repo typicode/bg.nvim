@@ -36,7 +36,7 @@ end
 
 local setup = function()
 	vim.api.nvim_create_autocmd({ "ColorScheme", "UIEnter" }, { callback = update })
-	vim.api.nvim_create_autocmd({ "VimLeavePre" }, { callback = reset })
+	vim.api.nvim_create_autocmd({ "VimLeavePre", "VimSuspend" }, { callback = reset })
 end
 
 setup()
