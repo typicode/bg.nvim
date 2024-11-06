@@ -9,6 +9,8 @@ end
 local reset = function()
 	if os.getenv("TMUX") then
 		os.execute('printf "\\ePtmux;\\e\\033]111\\007\\e\\\\"')
+	elseif os.getenv("TERM") == "xterm-kitty" then
+		os.execute('printf "\\033]30101\\007" > ' .. tty)
 	else
 		os.execute('printf "\\033]111\\007" > ' .. tty)
 	end
@@ -24,6 +26,10 @@ local update = function()
 
 	local bghex = string.format("#%06x", bg)
 	local fghex = string.format("#%06x", fg)
+
+	if os.getenv("TERM") == "xterm-kitty" then
+		os.execute('printf "\\033]30001\\007" > ' .. tty)
+	end
 
 	if os.getenv("TMUX") then
 		os.execute('printf "\\ePtmux;\\e\\033]11;' .. bghex .. '\\007\\e\\\\"')
