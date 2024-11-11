@@ -19,9 +19,6 @@ _Changing colorscheme with and without `bg.nvim`_
 ## Install
 
 ```lua
--- Packer
-use({ "typicode/bg.nvim" })
--- Lazy
 { "typicode/bg.nvim", lazy = false }
 ```
 
