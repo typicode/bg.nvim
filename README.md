@@ -2,19 +2,13 @@
 
 > `bg.nvim` automatically syncs terminal background and cursor with any neovim colorscheme.
 
-## Example
+## Demo
 
-_Changing colorscheme with and without `bg.nvim`_
+Changing colorscheme with and without `bg.nvim`.
 
-| -           |     | bg.nvim  |
-| ----------- | --- | -------- |
-| ![without2] | →   | ![with2] |
-| ![without1] | →   | ![with1] |
+https://github.com/user-attachments/assets/5699daaf-cc6e-4996-a334-b8b50e50896f
 
-[without2]: https://user-images.githubusercontent.com/5502029/211707779-f2ca5cc8-7b0f-4644-ad07-2f1faccf38b7.png
-[without1]: https://user-images.githubusercontent.com/5502029/211707727-5713022d-93bc-4795-beb1-ede0d4b86839.png
-[with2]: https://user-images.githubusercontent.com/5502029/211707792-ab1230ad-85b4-4b29-b956-25e5aebaa5bb.png
-[with1]: https://user-images.githubusercontent.com/5502029/211707740-aceadea4-a710-4f88-9975-0244d6ef1eda.png
+On the left, terminal background isn't synced with neovim, on the right it is and there's no inconsistency.
 
 ## Install
 
