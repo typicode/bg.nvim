@@ -22,7 +22,7 @@ local update = function()
 	local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false, create = false })
 	local bg = normal.bg
 	local fg = normal.fg
-	if bg == nil then
+	if bg == nil or fg == nil then
 		return reset()
 	end
 
